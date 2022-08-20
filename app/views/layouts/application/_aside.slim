@@ -1,0 +1,69 @@
+aside.navbar.navbar-vertical.navbar-expand-lg.navbar-dark
+  .container-fluid
+    button.navbar-toggler data-bs-target='#navbar-menu' data-bs-toggle='collapse' type='button'
+      span.navbar-toggler-icon
+    h1.navbar-brand.navbar-brand-autodark
+      = link_to manager_root_path
+        = image_pack_tag 'logo-light.svg', alt: 'Tabler', class: 'navbar-brand-image'
+    .navbar-nav.flex-row.d-lg-none
+    #navbar-menu.collapse.navbar-collapse
+      ul.navbar-nav.pt-lg-3
+        li.nav-item class=active_link_class(['manager/home#index'])
+          = link_to manager_root_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined dashboard
+            span.nav-link-title
+              | Dashboard
+
+        li.nav-item[class="#{active_link_class(['manager/contacts#index'])}"]
+          = link_to manager_contacts_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined phone_in_talk
+            span.nav-link-title
+              | Contacts
+
+        li.nav-item class=active_link_class(['manager/person/developer#index'])
+          = link_to manager_person_developers_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined sailing
+            span.nav-link-title
+              | Developers
+
+        li.nav-item.nav-item-title
+          | Blogs
+
+        li.nav-item class=active_link_class(['manager/post_categories'])
+          = link_to manager_post_categories_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined category
+            span.nav-link-title
+              | Categories
+
+        li.nav-item class=active_link_class(['manager/posts'])
+          = link_to manager_posts_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined web_stories
+            span.nav-link-title
+              | Posts
+
+        li.nav-item.nav-item-title
+          | Settings
+
+        li.nav-item class=active_link_class(['manager/frameworks'])
+          = link_to manager_frameworks_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined shield_moon
+            span.nav-link-title
+              | Frameworks
+
+        li.nav-item class=active_link_class(['manager/programming_languages'])
+          = link_to manager_programming_languages_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined local_fire_department
+            span.nav-link-title
+              | Languages
+
+        li.nav-item class=active_link_class(['manager/universities#index'])
+          = link_to manager_universities_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined school
+            span.nav-link-title
+              | Universities
+
+        li.nav-item class=active_link_class(['manager/skills'])
+          = link_to manager_skills_path, class: 'nav-link'
+            span.nav-link-icon.d-md-none.d-lg-inline-block.material-icons.material-icons-outlined color_lens
+            span.nav-link-title
+              | Skills

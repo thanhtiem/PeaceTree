@@ -1,0 +1,15 @@
+.btn {
+  border-color: transparent !important;
+}
+
+.button-icon {
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+
+  .link-icon {
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+}

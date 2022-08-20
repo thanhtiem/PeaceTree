@@ -1,0 +1,16 @@
+.form-label {
+  abbr {
+    display: none !important;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+
+.form-control {
+  &.is-valid {
+    border-color: #d9dbde;
+  }
+}

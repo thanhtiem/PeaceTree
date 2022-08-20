@@ -1,0 +1,15 @@
+.img-thumbnail {
+  &.post-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+}
+
+table {
+  tbody {
+    td.post-thumbnail-cell {
+      width: 112px;
+    }
+  }
+}

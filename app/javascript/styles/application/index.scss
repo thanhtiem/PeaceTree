@@ -1,0 +1,9 @@
+@import '../shared/index';
+@import './theme';
+@import 'trix/dist/trix';
+
+// common
+@import './components/navbar';
+
+// views
+@import './views/posts';

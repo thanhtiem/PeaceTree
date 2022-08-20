@@ -1,0 +1,12 @@
+.flash-container {
+  right: 16px;
+  bottom: 16px;
+  position: fixed;
+  z-index: 9999;
+
+  .alert {
+    min-width: 360px;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}

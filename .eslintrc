@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "document": true,
+    "bootstrap": true
+  },
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "no-alert": "off",
+    "no-console": "off",
+    "no-debugger": "off",
+    "max-len": ["error", {
+      "code": 120,
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "ignoreRegExpLiterals": true
+    }],
+    "class-methods-use-this": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./app/javascript"]
+        ]
+      },
+      "node": {
+        "paths": ["./vendor"]
+      }
+    }
+  }
+}

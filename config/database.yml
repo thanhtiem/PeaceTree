@@ -1,0 +1,23 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  user: postgres
+  password: 521214
+
+development:
+  <<: *default
+  database: PeaceTree_development
+
+test:
+  <<: *default
+  database: PeaceTree_test
+
+production:
+  <<: *default
+  database: PeaceTree_production
+  username: PeaceTree
+  password: <%= ENV["PEACETREE_DATABASE_PASSWORD"] %>
