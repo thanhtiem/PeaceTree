@@ -9,6 +9,7 @@
     "@tabler/core": "^1.0.0-beta11",
     "apexcharts": "^3.35.3",
     "choices.js": "^10.1.0",
+    "material-icons": "^1.11.10",
     "trix": "^2.0.0-beta.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"

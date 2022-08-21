@@ -19,7 +19,7 @@ module TablerHelper
   end
 
   def manager_breadcrumb(items)
-    manager_items = items.unshift(['Manager', manager_root_path])
+    manager_items = items.unshift(['Manager', leader_root_path])
     breadcrumb(manager_items)
   end
 end

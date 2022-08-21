@@ -1,0 +1,23 @@
+#devise-passwords-new-container.devise-form-container.d-flex.align-items-center.justify-content-center.flex-column
+  = link_to root_path, class: 'mx-auto mb-4'
+    / = image_pack_tag 'logo-dark.svg', class: 'logo'
+  .card.mx-auto
+    .card-body
+      h1.text-center.my-4
+        | Forgot your password?
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: 'email', placeholder: 'Email' },
+                    wrapper_html: { class: 'mb-3' }
+        .form-actions.mt-3.mb-4
+          = f.button :submit, 'Submit', class: 'btn btn-primary w-100'
+        .form-links.mb-3.text-center
+          span
+            | Already have account?&nbsp;
+          = link_to 'Login', new_user_session_path
+          br
+          = link_to 'Back to home', new_user_session_path

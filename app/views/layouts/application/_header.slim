@@ -39,7 +39,7 @@ header.navbar.navbar-expand-md.navbar-light.d-none.d-lg-flex.d-print-none
             | B
           .d-none.d-xl-block.ps-2
             div
-              = current_user.email
+              = current_user&.email
             .mt-1.small.text-muted
               | Admin
         .dropdown-menu.dropdown-menu-end.dropdown-menu-arrow

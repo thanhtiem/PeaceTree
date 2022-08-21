@@ -1,0 +1,6 @@
+#flash.flash-container
+  - flash.each do |type, msg|
+    .alert.alert-dismissible.fade.show class=alert_variant_class(type) role='alert' data-controller='flash' data-flash-target='alert'
+      span.alert-inner--text
+        = msg
+      a.btn-close data-bs-dismiss='alert'
