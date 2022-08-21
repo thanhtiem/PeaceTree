@@ -1,0 +1,23 @@
+#confirmations-new-container.devise-form-container.d-flex.align-items-center.justify-content-center.flex-column
+  = link_to root_path, class: 'mx-auto mb-4'
+    / = image_pack_tag 'logo-dark.svg', class: 'logo'
+  .card.mx-auto
+    .card-body
+      h1.text-center.my-4
+        | Resend confirmation instructions
+      = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+        = f.error_notification
+        = f.full_error :confirmation_token
+        .form-inputs
+          = f.input :email,
+                    required: true,
+                    autofocus: true,
+                    value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                    input_html: { autocomplete: 'email' },
+                    wrapper_html: { class: 'mb-3' }
+        .form-actions
+          = f.button :submit, 'Resend', class: 'btn btn-primary w-100'
+        .form-links.mb-3.text-center
+            = link_to 'Login', new_user_session_path
+            br
+            = link_to 'Sign up', new_user_registration_path

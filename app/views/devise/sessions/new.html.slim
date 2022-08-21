@@ -1,0 +1,30 @@
+#devise-sessions-new-container.devise-form-container.d-flex.align-items-center.justify-content-center.flex-column
+  = link_to root_path, class: 'mx-auto mb-4'
+    / = image_pack_tag 'logo-dark.svg', class: 'logo'
+  .card.mx-auto
+    .card-body
+      h1.text-center.my-4
+        | Welcome back!
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-inputs
+          = f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: 'email', placeholder: 'Email' },
+                    wrapper_html: { class: 'mb-3' }
+          = f.input :password,
+                    required: false,
+                    input_html: { autocomplete: 'current-password', placeholder: 'Password' },
+                    wrapper_html: { class: 'mb-3' }
+          .d-none
+            = f.input :remember_me,
+                      as: :boolean,
+                      input_html: { checked: true } if devise_mapping.rememberable?
+        .form-actions.mb-3
+          = f.button :submit, 'Login', class: 'btn btn-primary w-100'
+        .form-links.mb-3.text-center
+          = link_to 'Forgot your password?', new_user_password_path
+          br
+          span
+            | Don't have an account?&nbsp;
+            = link_to 'Sign up for free', new_user_registration_path

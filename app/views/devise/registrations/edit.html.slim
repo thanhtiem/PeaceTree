@@ -1,0 +1,50 @@
+#devise-registrations-edit-container
+  .page-header
+    .container-xl
+      .row.align-items-center
+        .col
+          h2.page-title.mb-1
+            | Profile Settings
+          = manager_breadcrumb([['Your profile']])
+  .page-body
+    .container-xl
+      .card.mx-auto
+        .card-body
+          = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = f.error_notification
+            .row
+              .col-md-4
+                .d-flex.justify-content-center.align-items-center.text-center
+                  = f.input :avatar,
+                            as: :file,
+                            label: 'Profile picture',
+                            label_html: { class: 'fw-bold mb-2' },
+                            input_html: { class: 'filepond-avatar',
+                                          data: { controller: 'filepond',
+                                                  filepond_target: 'input',
+                                                  style_layout: 'avatar',
+                                                  accepted_file_types: 'image/*',
+                                                  files: filepond_initial_files(current_user.avatar) } }
+              .col-md-8
+                = f.input :email,
+                          required: true,
+                          disabled: true,
+                          autofocus: true,
+                          wrapper_html: { class: 'mb-3' }
+                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                  p
+                    | Currently waiting confirmation for: #{resource.unconfirmed_email}
+                = f.input :password,
+                          hint: "Please leave it blank if you don't want to change it",
+                          required: false,
+                          wrapper_html: { class: 'mb-3' }
+                = f.input :password_confirmation,
+                          required: false,
+                          wrapper_html: { class: 'mb-3' }
+                = f.input :current_password,
+                          required: true,
+                          wrapper_html: { class: 'mb-3' }
+
+                .form-footer.d-flex.justify-content-between.align-items-center
+                  = link_to 'Cancel', manager_root_path
+                  = f.submit 'Submit', class: 'btn btn-primary ms-auto'

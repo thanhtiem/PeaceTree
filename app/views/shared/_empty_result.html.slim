@@ -1,0 +1,9 @@
+.container-xl.d-flex.flex-column.justify-content-center
+  .empty
+    .empty-img
+      = image_pack_tag 'empty.svg', height: 128
+    p.empty-title No results found
+    p.empty-subtitle.text-muted
+      | Try adjusting your search or filter to find what you're looking for.
+    .empty-action
+      = yield
